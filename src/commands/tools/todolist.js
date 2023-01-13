@@ -21,22 +21,32 @@ module.exports = {
 
         const add = new ButtonBuilder()
             .setCustomId("addTodo")
-            .setLabel("Add a todo")
+            .setLabel("Add Task")
+            .setStyle(ButtonStyle.Success);
+
+        const commit = new ButtonBuilder()
+            .setCustomId("commitTodo")
+            .setLabel("Commit Task")
+            .setStyle(ButtonStyle.Primary);
+
+        const finish = new ButtonBuilder()
+            .setCustomId("finishTodo")
+            .setLabel("Finish Task")
             .setStyle(ButtonStyle.Success);
 
         const edit = new ButtonBuilder()
             .setCustomId("editTodo")
-            .setLabel("Edit a todo")
-            .setStyle(ButtonStyle.Primary);
+            .setLabel("Edit Task")
+            .setStyle(ButtonStyle.Secondary);
 
         const remove = new ButtonBuilder()
             .setCustomId("removeTodo")
-            .setLabel("Remove a todo")
+            .setLabel("Remove Task")
             .setStyle(ButtonStyle.Danger);
 
         const removeList = new ButtonBuilder()
             .setCustomId("removeList")
-            .setLabel("delete the list")
+            .setLabel("Delete List")
             .setStyle(ButtonStyle.Danger);
 
         await interaction.reply({
@@ -45,9 +55,11 @@ module.exports = {
                 new ActionRowBuilder().addComponents(
                     add,
                     edit,
-                    remove,
-                    removeList
+                    commit,
+                    finish,
+                    remove
                 ),
+                new ActionRowBuilder().addComponents(removeList),
             ],
             embeds: [embed],
         });

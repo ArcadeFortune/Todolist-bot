@@ -1,4 +1,4 @@
-const { ActionRowBuilder, StringSelectMenuBuilder, isValidationEnabled } = require("discord.js");
+const { ActionRowBuilder, StringSelectMenuBuilder } = require("discord.js");
 
 module.exports = {
     data: {

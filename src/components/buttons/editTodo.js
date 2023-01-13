@@ -19,14 +19,27 @@ module.exports = {
             var todoList = todoString.split("\n"); //current todo as array
             var optionList = []; //array to place the options for later
             for (var i = 0; i < todoList.length; i++) {
-                //for each todo entry:
-                optionList[i] = {
-                    //create an option to choose from (so user can decide what to edit)
-                    label: todoList[i].substring(2),
-                    value: i.toString() + interactionId, //pass the interaction id in order to modify later
-                };
+                if (todoList[i].slice(0, 11) === "[COMMITTED]") {
+                    optionList[i] = {
+                        //create an option to choose from (so user can decide what to edit)
+                        label: todoList[i],
+                        value: i.toString() + interactionId, //pass the interaction id in order to modify later
+                    };
+                } else if (todoList[i].slice(0, 10) === "[FINISHED]") {
+                    optionList[i] = {
+                        //create an option to choose from (so user can decide what to edit)
+                        label: todoList[i],
+                        value: i.toString() + interactionId, //pass the interaction id in order to modify later
+                    };
+                } else {
+                    //for each todo entry:
+                    optionList[i] = {
+                        //create an option to choose from (so user can decide what to edit)
+                        label: todoList[i].substring(2),
+                        value: i.toString() + interactionId, //pass the interaction id in order to modify later
+                    };
+                }
             }
-
             var menu = new StringSelectMenuBuilder()
                 .setCustomId(`editTodoFromMenu`)
                 .setMinValues(1)
@@ -38,8 +51,8 @@ module.exports = {
                 components: [new ActionRowBuilder().addComponents(menu)],
             });
 
-            console.log("------------------------------")
-            console.log("User wants to edit a task...")
+            console.log("------------------------------");
+            console.log("User wants to edit a task...");
         }
     },
 };

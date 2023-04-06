@@ -21,7 +21,7 @@ module.exports = {
         });
         interaction.deferUpdate(); //synonym for do nothing, if i delete this line it will show an error message
     
-        console.log("User wants to add", newTask);
+        console.log(interaction.user.tag, "wants to add", newTask);
         console.log("Updated the list to:\n" + newEmbedDescription);
     },
 };

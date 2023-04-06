@@ -36,6 +36,6 @@ module.exports = {
         await interaction.showModal(modal);
 
         console.log("------------------------------");
-        console.log("User is adding a new task...");
+        console.log(interaction.user.tag, "is adding a new task...");
     },
 };

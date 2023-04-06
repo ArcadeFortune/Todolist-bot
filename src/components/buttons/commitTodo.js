@@ -47,7 +47,7 @@ module.exports = {
             });
 
             console.log("------------------------------");
-            console.log("User wants to commit to a task...");
+            console.log(`${interaction.user.tag} wants to commit to a task...`);
         }
     },
 };

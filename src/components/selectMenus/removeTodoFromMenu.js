@@ -24,7 +24,7 @@ module.exports = {
             interaction.deferUpdate(); //synonym for do nothing, if i delete this line it will show an error message
             interaction.message.delete(); //delete the used menu
 
-            console.log("User wants to delete task", selectedTaskString);
+            console.log(interaction.user.tag, "wants to delete task", selectedTaskString);
             console.log("Updated list to:\n" + newEmbedDescription);
         });
     },

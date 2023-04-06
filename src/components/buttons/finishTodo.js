@@ -16,7 +16,7 @@ module.exports = {
         canFinishWithThose(options) ? await reply(menu) : await cancelReply()
 
         console.log("------------------------------");
-        console.log("User wants to finish a task...");
+        console.log(interaction.user.tag, "wants to finish a task...");
 
         // console.log(todoString, "\n")
         // console.log(todoList, "\n")
@@ -71,7 +71,7 @@ module.exports = {
 
         function cancelReply() {
             return interaction.reply({
-                content: "You can't finish nothing.",
+                content: "You can't finish anything.",
                 ephemeral: true,
             });
         }

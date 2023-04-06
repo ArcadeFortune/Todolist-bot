@@ -63,5 +63,6 @@ module.exports = {
             ],
             embeds: [embed],
         });
+        console.log(interaction.user.tag)
     },
 };

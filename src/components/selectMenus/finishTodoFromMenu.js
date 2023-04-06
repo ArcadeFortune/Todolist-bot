@@ -14,7 +14,7 @@ module.exports = {
             replaceEmbed(todoList, newTodoString);
             deleteMenu();
 
-            console.log("User finished task " + todoArray[todoToFinish]);
+            console.log(interaction.user.tag, "finished task " + todoArray[todoToFinish]);
             console.log("Updated list to:\n" + newTodoString);            
         });
 

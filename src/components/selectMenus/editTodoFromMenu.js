@@ -29,6 +29,6 @@ module.exports = {
         modal.addComponents(new ActionRowBuilder().addComponents(textInput));
         await interaction.showModal(modal);
 
-        console.log("User wants to edit task", selectedTaskString)
+        console.log(interaction.user.tag, "wants to edit task", selectedTaskString)
     },
 };

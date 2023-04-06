@@ -11,7 +11,7 @@ module.exports = {
         if (!currentTodo) {
             //if todo is empty then warn user
             interaction.reply({
-                content: "You can't delete nothing.",
+                content: "You can't delete anything.",
                 ephemeral: true,
             });
         } else {
@@ -39,7 +39,7 @@ module.exports = {
             });
 
             console.log("------------------------------")
-            console.log("User wants to delete a task...")
+            console.log(interaction.user.tag, "wants to delete a task...")
         }
     },
 };

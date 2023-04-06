@@ -52,7 +52,7 @@ module.exports = {
             });
 
             console.log("------------------------------");
-            console.log("User wants to edit a task...");
+            console.log(interaction.user.tag, "wants to edit a task...");
         }
     },
 };
